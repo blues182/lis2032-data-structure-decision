@@ -209,54 +209,90 @@ void printPseudocode(DataStructure ds) {
 }
 
 void printCourseExample(DataStructure ds) {
-    printf(">>> Ejemplo basado en el curso LIS2032:\n\n");
+    printf(">>> Ejemplo basado en actividades del curso LIS2032:\n\n");
 
     if (ds == DS_BST) {
-        /* Ejemplo REAL de lo visto en clase: arbol binario y recorridos */
+        /* Actividades: Trees, Binary Tree, Red-Black Tree Search Structure */
         int values[] = {9, 5, 3, 7, 10};
-        int n = sizeof(values) / sizeof(values[0]);
+        int n = (int)(sizeof(values) / sizeof(values[0]));
         Node *root = NULL;
 
-        printf("Construyendo un BST con los valores: ");
+        printf("Actividades relacionadas: Activity - Trees, Activity - Binary Tree,\n");
+        printf("                          Activity - Red-Black Tree Search Structure.\n\n");
+
+        printf("Construyendo un Binary Search Tree (BST) con los valores: ");
         for (int i = 0; i < n; ++i) {
             printf("%d ", values[i]);
             root = bstInsert(root, values[i]);
         }
-        printf("\n\nRecorrido In-Order del arbol:\n  ");
 
-        bstInOrder(root);   /* imprime en orden: 3 5 7 9 10 */
-        printf("\n\nObservacion: el recorrido In-Order imprime los elementos ordenados.\n");
+        printf("\n\nRecorrido In-Order del arbol:\n  ");
+        bstInOrder(root);   /* imprime: 3 5 7 9 10 */
+        printf("\n\nObservacion: el recorrido In-Order visita los nodos en orden ascendente,\n");
+        printf("igual que en las actividades de arboles binarias del curso.\n");
 
         bstFree(root);      /* liberar memoria */
     } else {
-        /* Para las otras estructuras dejamos ejemplos explicativos simples */
         switch (ds) {
-            case DS_STACK:
-                printf("Stack: pila de operaciones 'undo' en un editor de texto.\n");
-                printf("Cada accion se guarda con PUSH y se revierte con POP.\n");
-                break;
-            case DS_QUEUE:
-                printf("Queue: cola de impresion.\n");
-                printf("Los trabajos se encolan en orden de llegada y se atienden FIFO.\n");
-                break;
             case DS_ARRAY:
-                printf("Array: arreglo de calificaciones A[i] donde cada posicion es un alumno.\n");
+                printf("Actividades relacionadas:\n");
+                printf("- Activity 03 - Arrays in C\n");
+                printf("- Activity 04 - Arrays and Dynamic Memory\n");
+                printf("- Activity 07 - Spiral Matrix\n");
+                printf("- 2D Matrix Exercise 01 y 02\n");
+                printf("- Activity - File reading\n\n");
+                printf("Ejemplo: usar un arreglo o matriz para almacenar datos leidos de un archivo\n");
+                printf("y procesarlos por indice (A[i][j]) o en forma de matriz espiral.\n");
                 break;
+
             case DS_LINKED_LIST:
-                printf("Linked List: lista de tareas donde insertas y borras elementos en medio.\n");
+                printf("Actividades relacionadas:\n");
+                printf("- Activity 01 - Linked List ADT\n");
+                printf("- Activity - Circular Linked List\n");
+                printf("- Activity - Queue using Linked List\n\n");
+                printf("Ejemplo: lista de nodos donde puedes insertar y eliminar elementos en medio\n");
+                printf("sin mover el resto, como en las actividades de listas enlazadas.\n");
                 break;
+
+            case DS_STACK:
+                printf("Actividades relacionadas:\n");
+                printf("- Activity - Stack: Trace the Stack\n");
+                printf("- Activity - Stack: Fixing the Bug\n");
+                printf("- Activity - Stack - Improving parenthesis checker\n\n");
+                printf("Ejemplo: usar una pila para revisar balance de parentesis o para 'undo'.\n");
+                printf("Cada simbolo se hace PUSH y se valida la estructura con POP.\n");
+                break;
+
+            case DS_QUEUE:
+                printf("Actividades relacionadas:\n");
+                printf("- Activity - Queues using arrays\n");
+                printf("- Activity - Queue using Linked List\n\n");
+                printf("Ejemplo: cola de impresion donde los trabajos entran con ENQUEUE y\n");
+                printf("se atienden en orden FIFO con DEQUEUE.\n");
+                break;
+
             case DS_HEAP:
-                printf("Heap: cola de prioridad de procesos del sistema operativo.\n");
+                printf("No hubo una actividad de Heap directa, pero se relaciona con:\n");
+                printf("- Colas y scheduling de procesos (extension de Queue).\n\n");
+                printf("Ejemplo: cola de prioridad donde siempre sale primero el proceso con\n");
+                printf("mayor prioridad (como en sistemas operativos).\n");
                 break;
+
             case DS_GRAPH:
-                printf("Graph: mapa de ciudades conectadas por carreteras.\n");
+                printf("Actividades relacionadas:\n");
+                printf("- Activity - Graph - Paper and Pencil\n");
+                printf("- Activity - Adjacency\n\n");
+                printf("Ejemplo: representar un mapa de ciudades usando lista de adyacencia,\n");
+                printf("tal como en los ejercicios de grafos en papel y de matrices/listas\n");
+                printf("de adyacencia.\n");
                 break;
+
             default:
-                printf("Ejemplo generico: coleccion de datos con inserciones y busquedas.\n");
+                printf("Ejemplo generico: coleccion de datos con inserciones, borrados\n");
+                printf("y busquedas segun la estructura seleccionada.\n");
                 break;
         }
     }
 
     printf("\n");
 }
-
