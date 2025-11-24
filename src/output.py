@@ -1,16 +1,10 @@
-"""
-Módulo de output - Maneja la visualización de resultados, diagramas y ejemplos
-"""
 
 from decision import DataStructure, ds_name
 from questions import Answers
 
 
 def print_rationale(ds: DataStructure, ans: Answers) -> None:
-    """
-    Imprime el rationale detallado para la estructura recomendada,
-    personalizado según las respuestas del usuario.
-    """
+    
     print("=== Rationale ===")
     print(f"Se recomienda: {ds_name(ds)}\n")
     
