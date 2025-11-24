@@ -1,9 +1,4 @@
-"""
-Entry point for the LIS2032 Data Structure Decision System.
 
-Se corre con:
-    python3 -m src.main
-"""
 
 from .questions import ask_questions, Answers
 from .decision import decide_structure, DataStructure
