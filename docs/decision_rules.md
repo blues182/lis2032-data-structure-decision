@@ -1,107 +1,21 @@
-# Decision Rules
+# Reglas de Decisión del Sistema
 
-This document defines the deterministic rules that the system uses to recommend a data structure based on the questionnaire.
+## Sistema de Puntuación
+Cada estructura recibe puntos basado en las respuestas del usuario:
 
-The rules are aligned with LIS2032 contents and only include structures covered during the course.
+### Array
+- +4 si necesita acceso aleatorio
+- +3 si tamaño no es dinámico
+- -3 si hay inserciones en medio
 
----
+### Linked List  
+- +4 si hay inserciones en medio
+- +3 si tamaño es dinámico
+- +3 si hay inserciones/eliminaciones frecuentes
 
-# ✅ Structures Considered
+### Hash Table
+- +5 si necesita búsqueda rápida
+- +5 si necesita clave-valor
+- +2 promedio para operaciones
 
-- Array  
-- Linked List  
-- Stack  
-- Queue  
-- Binary Search Tree (BST)  
-- Heap (Priority Queue)  
-- Graph  
-
----
-
-# 🎯 Decision Logic (Deterministic)
-
-The rules are evaluated **in this exact order**:
-
----
-
-## **Rule 1 – LIFO behavior**
-If the user answers **YES** to:
-> "Are your operations mainly LIFO?"
-
-Then the final recommendation is:
-
-### → **Stack**
-
----
-
-## **Rule 2 – FIFO behavior**
-If the user answers **YES** to:
-> "Are your operations mainly FIFO?"
-
-Then:
-
-### → **Queue**
-
----
-
-## **Rule 3 – Priority handling**
-If the user answers **YES** to:
-> "Do you need to manage priorities (max/min first)?"
-
-Then:
-
-### → **Heap**
-
----
-
-## **Rule 4 – Graph modeling**
-If the user answers **YES** to:
-> "Does your problem involve nodes connected as a network?"
-
-Then:
-
-### → **Graph**
-
----
-
-## **Rule 5 – Ordered structure required**
-If the user answers **YES** to:
-> "Do you need the data to remain sorted at all times?"
-
-Then:
-
-### → **Binary Search Tree (BST)**
-
----
-
-## **Rule 6 – Random access needed**
-If the user answers **YES** to:
-> "Do you need fast access by index (A[i])?"
-
-Then:
-
-### → **Array**
-
----
-
-## **Rule 7 – Many middle insertions/deletions**
-If the user answers **YES** to:
-> "Will you insert/delete many elements in the middle?"
-
-Then:
-
-### → **Linked List**
-
----
-
-## **Rule 8 – Default Case**
-If none of the above rules apply, then:
-
-### → **Array**
-
-This is because arrays provide the simplest and most general-purpose structure.
-
----
-
-# 📌 End of Rules
-These rules are implemented directly in `src/main.c`.
+... (continuar para todas las estructuras)
