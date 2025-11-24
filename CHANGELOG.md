@@ -1,12 +1,16 @@
-# Changelog
+# Historial de Cambios
 
-All meaningful project changes are documented here.
+## [1.0.0] - 2024-11-20
+### Added
+- Sistema completo de recomendación
+- 14 preguntas discriminativas
+- 9 estructuras de datos soportadas
+- Diagramas ASCII visuales
+- Pseudocódigo con complejidades
+- Ejemplos de actividades del curso
 
-## v1.0.0 – Final Submission
-- Added complete decision engine (rules + mapping)
-- Implemented modularized Python source code in `/src`
-- Added unit tests in `/test`
-- Added course-based example in `/example`
-- Added documentation: questions, rules, and diagrams in `/docs`
-- Added MIT License
-- Final README with native run instructions
+### Implementado
+- Módulo de preguntas interactivas
+- Sistema de decisión por puntuación
+- Visualización de resultados
+- Manejo de alternativas
