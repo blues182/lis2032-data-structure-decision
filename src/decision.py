@@ -9,7 +9,7 @@ from questions import Answers
 
 
 class DataStructure(Enum):
-    """Enumeration de todas las estructuras de datos soportadas"""
+    
     ARRAY = auto()
     DYNAMIC_ARRAY = auto()
     LINKED_LIST = auto()
@@ -25,7 +25,7 @@ class DataStructure(Enum):
 
 
 def ds_name(ds: DataStructure) -> str:
-    """Devuelve el nombre legible de una estructura de datos"""
+    
     names = {
         DataStructure.ARRAY: "Array (Estático)",
         DataStructure.DYNAMIC_ARRAY: "Dynamic Array",
@@ -45,7 +45,7 @@ def ds_name(ds: DataStructure) -> str:
 
 @dataclass
 class Recommendation:
-    """Contiene la recomendación completa: principal, alternativas y rationale"""
+    
     primary: DataStructure
     alternatives: List[DataStructure]
     rationale: str
@@ -173,10 +173,7 @@ def weighted_decision(ans: Answers) -> Recommendation:
 
 
 def generate_rationale(primary: DataStructure, ans: Answers) -> str:
-    """
-    Genera una explicación personalizada basada en la estructura seleccionada
-    y las respuestas del usuario.
-    """
+    
     base_rationale = {
         DataStructure.ARRAY: 
             "Array es ideal cuando necesitas acceso rápido por índice y el tamaño de datos es predecible.",
