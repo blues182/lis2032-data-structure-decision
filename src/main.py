@@ -1,6 +1,5 @@
 
 
-#!/usr/bin/env python3
 """
 SISTEMA GUIADO DE SELECCIÓN DE ESTRUCTURAS DE DATOS
 Archivo principal - Punto de entrada del sistema
@@ -9,12 +8,12 @@ Archivo principal - Punto de entrada del sistema
 import os
 import sys
 
-# Asegurar que el directorio actual está en el path
+
 current_dir = os.path.dirname(os.path.abspath(__file__))
 if current_dir not in sys.path:
     sys.path.insert(0, current_dir)
 
-# Ahora importamos los módulos
+
 from questions import ask_questions
 from decision import weighted_decision, ds_name
 from output import print_all_output
@@ -41,7 +40,7 @@ def print_recommendation(recommendation):
     print(f"\n📝 Explicación: {recommendation.rationale}")
     
     if recommendation.alternatives:
-        print(f"\n🔄 ALTERNATIVAS CONSIDERADAS:")
+        print(f"\n ALTERNATIVAS CONSIDERADAS:")
         for alt in recommendation.alternatives:
             print(f"   • {ds_name(alt)}")
         
@@ -74,7 +73,7 @@ def main():
             answers = ask_questions()
             
             # Tomar decisión
-            print("\n🔄 Analizando tus respuestas...")
+            print("\n Analizando tus respuestas...")
             recommendation = weighted_decision(answers)
             
             # Mostrar resultados
