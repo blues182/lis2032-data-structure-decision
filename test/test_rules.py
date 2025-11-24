@@ -4,7 +4,7 @@ from src.questions import Answers
 
 
 class DecisionRulesTest(unittest.TestCase):
-    
+
     def test_array_when_random_access(self):
         a = Answers(
             wants_random_access=True,
@@ -90,10 +90,10 @@ class DecisionRulesTest(unittest.TestCase):
         self.assertEqual(decide_structure(a), DataStructure.GRAPH)
 
     # -----------------------------
-    # END-TO-END TEST (docs/example)
+    # END-TO-END TEST (from docs/example)
     # -----------------------------
     def test_end_to_end_example(self):
-        """Simulates the same answers as the example in /docs/example/"""
+        """Simulates the example path described in /docs/example/README.md"""
         a = Answers(
             wants_random_access=False,
             needs_lifo=False,
