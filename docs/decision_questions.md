@@ -1,65 +1,87 @@
-x# Decision Questions
+# Cuestionario del Sistema de Recomendación
 
-This document contains the questionnaire used by the system to determine the most suitable data structure for the user's problem.
+## Preguntas de Evaluación
 
-All questions are based strictly on the content covered in LIS2032:
+### 1. Acceso y Búsqueda
 
-- Arrays  
-- Stacks  
-- Queues  
-- Linked Lists  
-- Trees (BST)  
-- Heaps  
-- Graphs  
+1. **¿Necesitas acceder a elementos por su posición/índice frecuentemente?**
+   - *Propósito:* Identificar necesidad de acceso aleatorio O(1)
+   - *Estructuras relevantes:* Array, Dynamic Array
 
----
+2. **¿La búsqueda rápida de elementos es una operación crítica?**
+   - *Propósito:* Evaluar importancia de operaciones de búsqueda
+   - *Estructuras relevantes:* Hash Table, Balanced BST
 
-## ✅ Questionnaire (7 Questions)
+3. **¿Necesitas asociar claves con valores (como un diccionario)?**
+   - *Propósito:* Detectar necesidad de mapeo clave-valor
+   - *Estructuras relevantes:* Hash Table, BST
 
-Below are the final 7 questions used in the system.
+4. **¿Requieres buscar elementos dentro de un rango específico?**
+   - *Propósito:* Identificar necesidad de range queries
+   - *Estructuras relevantes:* BST, Balanced BST, Array ordenado
 
-### **1. Do you need fast access by index (A[i])?**
-- If yes → an **Array** is a strong candidate.
-- Arrays provide O(1) positional access.
+5. **¿Necesitas buscar palabras por su prefijo?**
+   - *Propósito:* Detectar operaciones de búsqueda por prefijo
+   - *Estructuras relevantes:* Trie, Balanced BST
 
----
+### 2. Operaciones de Modificación
 
-### **2. Are your operations mainly LIFO (Last-In First-Out)?**
-- If yes → **Stack**.
-- Stacks represent undo operations, recursion, call stacks, etc.
+6. **¿Se insertan nuevos elementos frecuentemente?**
+   - *Propósito:* Evaluar frecuencia de operaciones de inserción
+   - *Estructuras relevantes:* Linked List, Hash Table, Dynamic Array
 
----
+7. **¿Se eliminan elementos frecuentemente?**
+   - *Propósito:* Evaluar frecuencia de operaciones de eliminación
+   - *Estructuras relevantes:* Linked List, Hash Table
 
-### **3. Are your operations mainly FIFO (First-In First-Out)?**
-- If yes → **Queue**.
-- Queues represent scheduling, print jobs, line order, etc.
+8. **¿Las inserciones/eliminaciones ocurren principalmente en el medio de los datos?**
+   - *Propósito:* Identificar operaciones en posiciones intermedias
+   - *Estructuras relevantes:* Linked List, Doubly Linked List
 
----
+9. **¿El tamaño de los datos cambia constantemente?**
+   - *Propósito:* Evaluar dinamicidad del conjunto de datos
+   - *Estructuras relevantes:* Linked List, Dynamic Array, Hash Table
 
-### **4. Will you insert/delete many elements in the middle of the collection?**
-- If yes → **Linked List**.
-- Linked lists allow O(1) insert/delete when the pointer is known.
+### 3. Comportamiento Específico
 
----
+10. **¿Los datos deben mantenerse ordenados automáticamente?**
+    - *Propósito:* Detectar necesidad de ordenamiento automático
+    - *Estructuras relevantes:* BST, Balanced BST
 
-### **5. Do you need the data to remain sorted at all times?**
-- If yes → **Binary Search Tree (BST)**.
-- BSTs allow ordered traversal and maintain sorted structure.
+11. **¿Necesitas procesar elementos por prioridad (el más importante primero)?**
+    - *Propósito:* Identificar manejo de prioridades
+    - *Estructuras relevantes:* Heap, Priority Queue
 
----
+12. **¿Procesas datos en orden de llegada (primero en entrar, primero en salir)?**
+    - *Propósito:* Detectar procesamiento FIFO
+    - *Estructuras relevantes:* Queue, Doubly Linked List
 
-### **6. Do you need to manage priorities (always extract max/min first)?**
-- If yes → **Heap**.
-- Heaps provide O(log n) insertion and priority extraction.
+13. **¿Procesas datos en orden inverso (último en entrar, primero en salir)?**
+    - *Propósito:* Detectar procesamiento LIFO
+    - *Estructuras relevantes:* Stack, Linked List
 
----
+14. **¿Tus datos representan relaciones o conexiones entre elementos?**
+    - *Propósito:* Identificar modelado de relaciones
+    - *Estructuras relevantes:* Graph, Hash Table (para adjacency list)
 
-### **7. Does your problem involve nodes connected as a network?**
-- If yes → **Graph**.
-- Used for routes, maps, social networks, and connection modeling.
+## Justificación del Diseño del Cuestionario
 
----
+### Cobertura Comprehensiva
+El cuestionario de 14 preguntas cubre todos los aspectos críticos para la selección de estructuras de datos:
 
-## 📌 Final Note
-These questions map directly to deterministic decision rules stored in `decision_rules.md`.
+- **Criterios de acceso** (5 preguntas)
+- **Patrones de modificación** (4 preguntas)  
+- **Comportamientos específicos** (5 preguntas)
+
+### Preguntas Discriminativas
+Cada pregunta está diseñada para:
+- **Distinguir** entre estructuras con características opuestas
+- **Capturar** requisitos fundamentales de rendimiento
+- **Identificar** patrones de uso específicos
+
+### Alineación con Objetivos de Aprendizaje
+Las preguntas refuerzan conceptos clave del curso:
+- Complejidades temporales Big-O
+- Trade-offs entre estructuras
+- Casos de uso apropiados para cada estructura
 
