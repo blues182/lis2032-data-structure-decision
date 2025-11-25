@@ -85,3 +85,82 @@ Las preguntas refuerzan conceptos clave del curso:
 - Trade-offs entre estructuras
 - Casos de uso apropiados para cada estructura
 
+# Reglas de Decisión del Sistema
+
+## Sistema de Puntuación Ponderada
+
+### Array (Estático)
+- **+4 puntos** si necesita acceso aleatorio frecuente
+- **+2 puntos** si el tamaño de datos es predecible
+- **-3 puntos** si hay inserciones/eliminaciones en medio
+- **-2 puntos** si el tamaño de datos es dinámico
+
+### Dynamic Array
+- **+3 puntos** si necesita acceso aleatorio
+- **+3 puntos** si el tamaño de datos es dinámico
+- **-2 puntos** si hay inserciones en medio
+
+### Linked List (Singly)
+- **+4 puntos** si hay inserciones/eliminaciones en medio
+- **+3 puntos** si el tamaño es muy variable
+- **+3 puntos** si hay inserciones frecuentes
+- **+3 puntos** si hay eliminaciones frecuentes
+- **-2 puntos** si necesita acceso por índice
+
+### Doubly Linked List
+- **+5 puntos** si hay operaciones en medio
+- **+3 puntos** para operaciones bidireccionales
+- **+3 puntos** si necesita implementar Queue
+- **-2 puntos** si necesita acceso por índice
+
+### Stack
+- **+5 puntos** si necesita procesamiento LIFO
+- **+3 puntos** si usa Linked List como base
+- **Exclusivo** para operaciones push/pop
+
+### Queue
+- **+5 puntos** si necesita procesamiento FIFO
+- **+3 puntos** si usa Linked List como base
+- **Exclusivo** para operaciones enqueue/dequeue
+
+### Binary Search Tree (BST)
+- **+4 puntos** si necesita datos ordenados
+- **+4 puntos** si necesita búsquedas por rango
+- **+3 puntos** si necesita búsqueda eficiente
+- **-1 punto** si los datos pueden estar desbalanceados
+
+### Balanced BST (AVL/Red-Black)
+- **+5 puntos** si necesita datos ordenados con garantías
+- **+5 puntos** para búsquedas por rango
+- **+4 puntos** si necesita búsqueda O(log n) garantizada
+
+### Heap / Priority Queue
+- **+5 puntos** si necesita manejar prioridades
+- **+4 puntos** para acceso al máximo/mínimo en O(1)
+- **+3 puntos** para scheduling por prioridad
+- **-1 punto** si necesita acceso arbitrario
+
+### Hash Table
+- **+5 puntos** si necesita búsqueda rápida
+- **+5 puntos** si necesita asociación clave-valor
+- **+4 puntos** para operaciones O(1) promedio
+- **-2 puntos** si necesita ordenamiento
+- **-2 puntos** si necesita búsquedas por rango
+
+### Graph
+- **+5 puntos** si modela relaciones entre elementos
+- **Exclusivo** para datos con conexiones complejas
+- **Usa** Adjacency List o Matrix según densidad
+
+### Trie
+- **+5 puntos** si necesita búsqueda por prefijo
+- **+4 puntos** para operaciones con strings
+- **Exclusivo** para diccionarios y autocompletado
+
+## Proceso de Decisión
+
+### 1. Evaluación Inicial
+```python
+# Calcular puntuaciones para cada estructura
+for pregunta in respuestas_usuario:
+    aplicar_reglas_puntuacion(pregunta, estructura)
